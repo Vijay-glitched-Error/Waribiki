@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to bottom, #2d006e, #450082);
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://png.pngtree.com/background/20210710/original/pngtree-tech-artificial-intelligence-banner-background-picture-image_1051501.jpg")
+          no-repeat center center/cover;
+        z-index: -1;
+        opacity: 0.8;
+      }
+
+      .login-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px 40px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        width: 300px;
+        color: white;
+        text-align: center;
+      }
+
+      .login-box input[type="text"],
+      .login-box input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        background: rgba(187, 185, 185, 0.2);
+        color: white;
+      }
+
+      .login-box button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f1c342;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .login-box button:hover {
+        background-color: #3b0072;
+      }
+
+      .login-box a {
+        color: #d1c4e9;
+        text-decoration: none;
+        font-size: 0.9em;
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="real page.html" method="get">
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <div class="options">
+          <label><input type="checkbox" /> Remember me</label>
+          <a href="project forgot pass.html">Forgot Password?</a>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="project register.html">Register</a></p>
+    </div>
+  </body>
+</html>

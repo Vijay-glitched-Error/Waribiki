@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Landing Page</title>
+    <link rel="stylesheet" href="real page.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Waribiki</h1>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">HOME</a></li>
+          <li><a href="All.html">All</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <!-- Cart Icon -->
+        <a href="cart.html" class="nav-icon">
+          <img
+            src="cart.png"
+            alt="Cart Icon"
+          />
+        </a>
+        <!-- Profile Icon -->
+        <div class="nav-icon profile-icon" onclick="showLoginOption()">
+          <img
+            src="profile.png"
+            alt="Profile Icon"
+          />
+          <div id="hover-text" class="hover-text">Login</div>
+        </div>
+      </div>
+
+      <div id="login-modal" class="login-modal">
+        <a href="project login.html">Login Now</a>
+      </div>
+
+      <div id="login-modal" class="login-modal">
+        <a href="project login.html">Login Now</a>
+      </div>
+    </header>
+    <div class="promo-section">
+      <video id="promoVideo" autoplay loop muted playsinline>
+        <source src="videoplayback (1).mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="promo-content">
+        <h1 id="promoPhoneName">iPhone 16 Pro</h1>
+        <p id="promoPhoneDescription">Hello, Apple Intelligence.</p>
+        <button id="buyButton" onclick="buyPhone()">Buy</button> <!-- Dynamic Buy button -->
+      </div>
+      <!-- Video navigation arrows -->
+      <button class="arrow-btn arrow-left" onclick="prevVideo()">&#8592;</button>
+      <button class="arrow-btn arrow-right" onclick="nextVideo()">&#8594;</button>
+    </div>
+      
+    </div>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div class="banner-content">
+        <h2>New Inspiration 2024</h2>
+        <h1>PHONE MADE FOR YOU!</h1>
+        <p>The latest offering from mobile and headphone style collection</p>
+        <button class="shop-btn" onclick="openShopModal()">SHOP NOW</button>
+      </div>
+      <div class="carousel">
+        <div class="carousel-images">
+          <img
+            src="iphone 16.png"
+            alt="Phone 1"
+          />
+          <img
+            src="samsung.png"
+            alt="Phone 2"
+          />
+          <img
+            src="One plus 12.png"
+            alt="Phone 3"
+          />
+        </div>
+        <button class="arrow-btn arrow-left" onclick="prevSlide()">
+          &#8592;
+        </button>
+        <button class="arrow-btn arrow-right" onclick="nextSlide()">
+          &#8594;
+        </button>
+      </div>
+    </section>
+
+    <div class="modal" id="shopModal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeShopModal()">×</span>
+        <h3>Select Your Phone</h3>
+        <p>Price: $999</p>
+        
+
+        <label for="storage">Storage:</label>
+        <select id="storage">
+          <option value="64GB">64GB</option>
+          <option value="128GB">128GB</option>
+          <option value="256GB">256GB</option>
+        </select>
+
+        <label for="color">Color:</label>
+        <select id="color">
+          <option value="Black">Black</option>
+          <option value="Silver">Silver</option>
+          <option value="Blue">Blue</option>
+        </select>
+
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Phones Section -->
+    <section id="phonesSection">
+      <h2>Available Phones</h2>
+      <div id="phonesContainer"></div>
+    </section>
+
+    <script>
+      // Carousel functionality
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelector(".carousel-images");
+        const totalSlides = slides.children.length;
+        if (index >= totalSlides) {
+          currentIndex = 0;
+        } else if (index < 0) {
+          currentIndex = totalSlides - 1;
+        } else {
+          currentIndex = index;
+        }
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+      function openShopModal() {
+        document.getElementById("shopModal").style.display = "flex";
+      }
+
+      // Function to close the Shop Modal
+      function closeShopModal() {
+        document.getElementById("shopModal").style.display = "none";
+      }
+
+      // Add to Cart functionality
+      function addToCart() {
+        alert("Phone added to cart!");
+        closeShopModal();
+      }
+      function showLoginOption() {
+        const modal = document.getElementById("login-modal");
+        modal.style.display = modal.style.display === "none" ? "block" : "none";
+      }
+
+      function showHoverText() {
+        document.getElementById("hover-text").style.display = "block";
+      }
+
+      function hideHoverText() {
+        document.getElementById("hover-text").style.display = "none";
+      }
+      function showLoginOption() {
+        const modal = document.getElementById("login-modal");
+        modal.style.display = modal.style.display === "none" ? "block" : "none";
+      }
+      let currentVideoIndex = 0;
+      const videos = [
+        {
+          src: "videoplayback (1).mp4", // Video 1 (iPhone)
+          name: "iPhone 16 Pro", // Phone name for first video
+          description: "Hello, Apple Intelligence.", // Promo description for first video
+          buyLink: "product 16.html"
+        },
+        {
+          src: "sumsung.mp4", // Video 2 (Samsung)
+          name: "Samsung Galaxy S24", // Phone name for second video
+          description: "Powerful performance, endless possibilities.", // Promo description for second video
+          buyLink: "product sumsung.html"
+        },
+        {
+          src: "oneplus.webm", // Video 2 (Samsung)
+          name: "One Plus 12", // Phone name for second video
+          description: "Powerful performance, endless possibilities.", // Promo description for second video
+          buyLink: "product 1+.html"
+        },
+
+        // Add more videos and content if needed
+      ];
+      // Function to show the video and update the promo content
+      function showVideo(index) {
+        const videoElement = document.getElementById("promoVideo");
+        const phoneNameElement = document.getElementById("promoPhoneName");
+        const phoneDescriptionElement = document.getElementById("promoPhoneDescription");
+        const buyButton = document.getElementById("buyButton");
+
+        if (index >= videos.length) {
+          currentVideoIndex = 0; // Go to the first video if index exceeds
+        } else if (index < 0) {
+          currentVideoIndex = videos.length - 1; // Go to the last video if index is negative
+        } else {
+          currentVideoIndex = index;
+        }
+
+        // Update video source
+        videoElement.src = videos[currentVideoIndex].src;
+        videoElement.load(); // Reload the video
+        videoElement.play(); // Play the new video
+
+        // Update promo content (name and description)
+        phoneNameElement.textContent = videos[currentVideoIndex].name;
+        phoneDescriptionElement.textContent =
+          videos[currentVideoIndex].description;
+          buyButton.textContent = `Buy ${videos[currentVideoIndex].name}`;
+  
+  // Instead of setting onclick dynamically, you can add an event listener:
+
+         buyButton.onclick = function() {
+         window.location.href = videos[currentVideoIndex].buyLink; // Redirect to buy page
+  };
+      }
+      showVideo(currentVideoIndex);
+      // Function to go to the next video
+      function nextVideo() {
+        showVideo(currentVideoIndex + 1);
+      }
+
+      // Function to go to the previous video
+      function prevVideo() {
+        showVideo(currentVideoIndex - 1);
+      }
+      // JavaScript to set active link based on the current page URL
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

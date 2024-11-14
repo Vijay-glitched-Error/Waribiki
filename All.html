@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Waribiki</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        padding: 20px;
+        color: white;
+      }
+
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .product-item {
+        width: 200px;
+        text-align: center;
+        transition: transform 0.3s;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .product-item:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Image container */
+      .image-container {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .product-item span {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+      }
+
+      header h1 {
+        font-size: 34px;
+        font-weight: bold;
+        color: white;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #333;
+        border-radius: 5px;
+      }
+
+      nav ul li a.active {
+        background-color: #555;
+        color: #fff;
+        border-radius: 5px;
+      }
+      .product-item a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Waribiki</h1>
+      <nav>
+        <ul>
+          <li><a href="real page.html">HOME</a></li>
+          <li><a href="All.html" class="active">All</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h3>Available Phones</h3>
+    <div class="product-list">
+      <div class="product-item">
+        <a href="product 15.html?id=1">
+          <div class="image-container">
+            <img src="iphone 15.png" alt="iPhone 15" />
+          </div>
+          <span>iPhone 15</span>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="product 1+.html?id=2">
+          <div class="image-container">
+            <img src="One plus 12.png" alt="OnePlus 12" />
+          </div>
+          <span>OnePlus 12</span>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="product 16.html?id=3">
+          <div class="image-container">
+            <img src="iphone 16.png" alt="iPhone 16" />
+          </div>
+          <span>iPhone 16</span>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="product samsung.html?id=4">
+          <div class="image-container">
+            <img src="samsung.png" alt="Samsung S24" />
+          </div>
+          <span>Samsung S24</span>
+        </a>
+      </div>
+      <!-- Additional Products -->
+      <div class="product-item">
+        <a href="product gp8.html?id=5">
+          <div class="image-container">
+            <img src="Google pixel 8.png" alt="Google pixel 8" />
+          </div>
+          <span>Google pixel 8</span>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="product Xiaomi 13.html?id=6">
+          <div class="image-container">
+            <img src="Xiaomi 13 Pro.png" alt="Xiaomi 13 pro" />
+          </div>
+          <span>Xiaomi 13</span>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="product sumsung 23.html?id=1">
+          <div class="image-container">
+            <img src="samsung 23.png" alt="Samsung S23" />
+          </div>
+          <span>Samsung S23</span>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="product 1+ nord.html?id=2">
+          <div class="image-container">
+            <img src="one plus nord.png" alt="One plus Nord" />
+          </div>
+          <span>One Plus Nord</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

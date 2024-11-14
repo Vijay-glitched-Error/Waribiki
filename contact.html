@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      .contact-container {
+        width: 90%;
+        max-width: 800px;
+        text-align: center;
+        background-color: black;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header */
+      .contact-header h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: white;
+      }
+
+      /* Info Cards Container */
+      .info-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      /* Info Cards */
+      .info-card {
+        background-color: #666;
+        padding: 20px;
+        width: 45%;
+        min-width: 250px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        text-align: center;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .info-card h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: white;
+      }
+
+      .info-card p {
+        font-size: 14px;
+        color: white;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background-color: black;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 95%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: #999;
+      }
+
+      .submit-button {
+        background-color: blue;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+      }
+
+      .submit-button:hover {
+        background-color: #333;
+      }
+
+      .message {
+        font-size: 16px;
+        color: green;
+        margin-top: 15px;
+        display: none;
+      }
+
+      .main-page-button {
+        margin-top: 20px;
+        padding: 12px 20px;
+        font-size: 16px;
+        background-color: blue;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+      }
+
+      .main-page-button:hover {
+        background-color: #333;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .info-card {
+          width: 100%;
+        }
+      }
+    </style>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        document.getElementById("message").style.display = "block";
+      }
+
+      function goToMainPage() {
+        window.location.href = "real page.html"; // Change this to your main page URL
+      }
+    </script>
+  </head>
+  <body>
+    <div class="contact-container">
+      <div class="contact-header">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <h4>Linkedln</h4>
+          <p>www.linkedin.com/in/vijay-kovvali-49ba2632b</p>
+        </div>
+        <div class="info-card">
+          <h4>Phone Number</h4>
+          <p>+91 6304801463<br /></p>
+        </div>
+        <div class="info-card">
+          <h4>Git-hub</h4>
+          <p>https://github.com/Vijay-glitched-Error</p>
+        </div>
+        <div class="info-card">
+          <h4>Email</h4>
+          <p>vijaykovvali3@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="Enter your Name" required />
+          <input
+            type="email"
+            placeholder="Enter a valid email address"
+            required
+          />
+          <textarea rows="4" placeholder="Your Message"></textarea>
+          <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <div id="message" class="message">Thank you for contacting us!</div>
+        <button class="main-page-button" onclick="goToMainPage()">
+          Go to Main Page
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

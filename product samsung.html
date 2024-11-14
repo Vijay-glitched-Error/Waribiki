@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail - Phone Store</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1b1b1b; /* Dark background */
+        color: white; /* White text */
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+      }
+      .image-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 40px; /* Rounded corners */
+      }
+      .details-container {
+        flex: 1;
+      }
+      .details-container h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .details-container p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      select,
+      button {
+        margin-top: 10px;
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      button {
+        margin-top: 20px;
+        background-color: #007aff; /* Apple-style blue */
+      }
+      button:hover {
+        background-color: #005bb5;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+      }
+      .mainpage-btn {
+        margin-top: 20px;
+        padding: 10px;
+        width: 96%;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007aff; /* Apple-style blue */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .mainpage-btn:hover {
+        background-color: #005bb5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Side: Image -->
+      <div class="image-container">
+        <img id="productImage" src="samsung.png" alt="Phone Image" />
+      </div>
+
+      <!-- Right Side: Product Details -->
+      <div class="details-container">
+        <h1 id="productName">Samsung S24</h1>
+        <p id="productPrice">$750</p>
+        <p>
+          The first Galaxy built for Samsung Intelligence. Personal, private,
+          powerful.
+        </p>
+
+        <label for="model">Model:</label>
+        <select id="model">
+          <option value="normal">Samsung S24</option>
+          <option value="plus">Samsung S24+</option>
+          <option value="Ultra">Samsung S24 Ultra</option>
+        </select>
+
+        <label for="storage">Storage:</label>
+        <select id="storage">
+          <option value="128GB">128GB</option>
+          <option value="256GB">256GB</option>
+          <option value="512GB">512GB</option>
+          <option value="1TB">1TB</option>
+        </select>
+
+        <label for="color">Color:</label>
+        <select id="color">
+          <option value="Black">Black</option>
+          <option value="Silver">Gray</option>
+          <option value="violet">Violet</option>
+        </select>
+
+        <button onclick="addToCart()">Add to Cart</button>
+        <a href="real page.html" class="mainpage-btn">Go to Main Page</a>
+      </div>
+    </div>
+
+    <script>
+      const productData = {
+        1: {
+          name: "Samsung Ultra",
+          price: "$750",
+          image: "samsung.png",
+        },
+      };
+
+      function loadProduct() {
+        const product = productData[1];
+        document.getElementById("productImage").src = product.image;
+        document.getElementById("productName").textContent = product.name;
+        document.getElementById("productPrice").textContent = product.price;
+      }
+
+      function addToCart() {
+        alert("Phone added to cart!");
+        window.location.href = "cart.html";
+      }
+
+      loadProduct(); // Load product on page load
+    </script>
+  </body>
+</html>
